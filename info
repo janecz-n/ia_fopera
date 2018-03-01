@@ -1,0 +1,19 @@
+10-11 Mars
+nbourgeo@phare.normalesup.org
+
+Passages:
+8--------9
+|        |
+4--5--6--7
+|        |
+0--1--2--3
+
+Personnages:
+Rouge: Pioche suspect ou fantome
+Rose: Passage secret
+Bleu: Bloque un passages
+Gris: Eteint une pièce
+Noir: Attire adjacents
+Blanc: Repousse
+Violet: Switch
+Marron: Kidnap

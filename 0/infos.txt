@@ -1,0 +1,343 @@
+**************************
+Tour:1, Score:4/22, Ombre:6, Bloque:{1, 2}
+violet-5-suspect  marron-7-suspect  noir-1-suspect  rose-4-suspect  gris-3-suspect  bleu-6-suspect  rouge-2-suspect  blanc-0-suspect
+****
+  Tour de le fantome
+QUESTION : Tuiles disponibles : [gris-3-suspect, blanc-0-suspect, rouge-2-suspect, marron-7-suspect] choisir entre 0 et 3
+REPONSE DONNEE : 0
+REPONSE INTERPRETEE : gris-3-suspect
+le fantome joue gris
+QUESTION : Voulez-vous activer le pouvoir (0/1) ?
+REPONSE DONNEE : 1
+REPONSE INTERPRETEE : True
+Pouvoir de gris activé
+QUESTION : Quelle salle obscurcir ? (0-9)
+REPONSE DONNEE : 2
+REPONSE INTERPRETEE : 2
+QUESTION : positions disponibles : {2, 7}, choisir la valeur
+REPONSE DONNEE : 2
+REPONSE INTERPRETEE : 2
+NOUVEAU PLACEMENT : gris-2-suspect
+****
+  Tour de l'inspecteur
+QUESTION : Tuiles disponibles : [blanc-0-suspect, rouge-2-suspect, marron-7-suspect] choisir entre 0 et 2
+REPONSE DONNEE : 0
+REPONSE INTERPRETEE : blanc-0-suspect
+l'inspecteur joue blanc
+QUESTION : positions disponibles : {1, 4}, choisir la valeur
+REPONSE DONNEE : 2
+REPONSE INTERPRETEE : 1
+NOUVEAU PLACEMENT : blanc-1-suspect
+QUESTION : Voulez-vous activer le pouvoir (0/1) ?
+REPONSE DONNEE : 1
+REPONSE INTERPRETEE : True
+Pouvoir de blanc activé
+QUESTION : noir-1-suspect, positions disponibles : {0}, choisir la valeur
+REPONSE DONNEE : 2
+REPONSE INTERPRETEE : 0
+NOUVEAU PLACEMENT : noir-0-suspect
+****
+  Tour de l'inspecteur
+QUESTION : Tuiles disponibles : [rouge-2-suspect, marron-7-suspect] choisir entre 0 et 1
+REPONSE DONNEE : 0
+REPONSE INTERPRETEE : rouge-2-suspect
+l'inspecteur joue rouge
+QUESTION : Voulez-vous activer le pouvoir (0/1) ?
+REPONSE DONNEE : 1
+REPONSE INTERPRETEE : True
+Pouvoir de rouge activé
+rouge-2-suspect a été tiré
+QUESTION : positions disponibles : {3}, choisir la valeur
+REPONSE DONNEE : 2
+REPONSE INTERPRETEE : 3
+NOUVEAU PLACEMENT : rouge-3-clean
+****
+  Tour de le fantome
+QUESTION : Tuiles disponibles : [marron-7-suspect] choisir entre 0 et 0
+REPONSE DONNEE : 0
+REPONSE INTERPRETEE : marron-7-suspect
+le fantome joue marron
+QUESTION : Voulez-vous activer le pouvoir (0/1) ?
+REPONSE DONNEE : 1
+REPONSE INTERPRETEE : True
+Pouvoir de marron activé
+QUESTION : positions disponibles : {9, 3, 6}, choisir la valeur
+REPONSE DONNEE : 3
+REPONSE INTERPRETEE : 3
+NOUVEAU PLACEMENT : marron-3-suspect
+le fantome frappe
+**************************
+Tour:2, Score:11/22, Ombre:2, Bloque:{1, 2}
+violet-5-suspect  marron-3-clean  noir-0-suspect  rose-4-suspect  gris-2-suspect  bleu-6-suspect  rouge-3-clean  blanc-1-suspect
+****
+  Tour de l'inspecteur
+QUESTION : Tuiles disponibles : [rose-4-suspect, violet-5-suspect, bleu-6-suspect, noir-0-suspect] choisir entre 0 et 3
+REPONSE DONNEE : 0
+REPONSE INTERPRETEE : rose-4-suspect
+l'inspecteur joue rose
+QUESTION : positions disponibles : {8, 9, 5, 0}, choisir la valeur
+REPONSE DONNEE : 2
+REPONSE INTERPRETEE : 8
+NOUVEAU PLACEMENT : rose-8-suspect
+****
+  Tour de le fantome
+QUESTION : Tuiles disponibles : [violet-5-suspect, bleu-6-suspect, noir-0-suspect] choisir entre 0 et 2
+REPONSE DONNEE : 0
+REPONSE INTERPRETEE : violet-5-suspect
+le fantome joue violet
+QUESTION : Voulez-vous activer le pouvoir (0/1) ?
+REPONSE DONNEE : 1
+REPONSE INTERPRETEE : True
+Pouvoir de violet activé
+Rappel des positions :
+Tour:2, Score:11/22, Ombre:2, Bloque:{1, 2}
+violet-5-suspect  marron-3-clean  noir-0-suspect  rose-8-suspect  gris-2-suspect  bleu-6-suspect  rouge-3-clean  blanc-1-suspect
+QUESTION : Avec quelle couleur échanger (pas violet!) ?
+REPONSE DONNEE : rose
+REPONSE INTERPRETEE : rose
+NOUVEAU PLACEMENT : violet-8-suspect
+NOUVEAU PLACEMENT : rose-5-suspect
+****
+  Tour de le fantome
+QUESTION : Tuiles disponibles : [bleu-6-suspect, noir-0-suspect] choisir entre 0 et 1
+REPONSE DONNEE : 0
+REPONSE INTERPRETEE : bleu-6-suspect
+le fantome joue bleu
+QUESTION : Voulez-vous activer le pouvoir (0/1) ?
+REPONSE DONNEE : 1
+REPONSE INTERPRETEE : True
+Pouvoir de bleu activé
+QUESTION : Quelle salle bloquer ? (0-9)
+REPONSE DONNEE : 2
+QUESTION : Quelle sortie ? Chosir parmi : {1, 3}
+REPONSE DONNEE : 1
+REPONSE INTERPRETEE : {1, 2}
+QUESTION : positions disponibles : {5, 7}, choisir la valeur
+REPONSE DONNEE : 7
+REPONSE INTERPRETEE : 7
+NOUVEAU PLACEMENT : bleu-7-suspect
+****
+  Tour de l'inspecteur
+QUESTION : Tuiles disponibles : [noir-0-suspect] choisir entre 0 et 0
+REPONSE DONNEE : 0
+REPONSE INTERPRETEE : noir-0-suspect
+l'inspecteur joue noir
+QUESTION : positions disponibles : {1, 4}, choisir la valeur
+REPONSE DONNEE : 2
+REPONSE INTERPRETEE : 1
+NOUVEAU PLACEMENT : noir-1-suspect
+QUESTION : Voulez-vous activer le pouvoir (0/1) ?
+REPONSE DONNEE : 1
+REPONSE INTERPRETEE : True
+Pouvoir de noir activé
+pas de cri
+**************************
+Tour:3, Score:13/22, Ombre:2, Bloque:{1, 2}
+violet-8-clean  marron-3-clean  noir-1-suspect  rose-5-clean  gris-2-clean  bleu-7-clean  rouge-3-clean  blanc-1-suspect
+****
+  Tour de le fantome
+QUESTION : Tuiles disponibles : [bleu-7-clean, violet-8-clean, rose-5-clean, noir-1-suspect] choisir entre 0 et 3
+REPONSE DONNEE : 0
+REPONSE INTERPRETEE : bleu-7-clean
+le fantome joue bleu
+QUESTION : Voulez-vous activer le pouvoir (0/1) ?
+REPONSE DONNEE : 1
+REPONSE INTERPRETEE : True
+Pouvoir de bleu activé
+QUESTION : Quelle salle bloquer ? (0-9)
+REPONSE DONNEE : 2
+QUESTION : Quelle sortie ? Chosir parmi : {1, 3}
+REPONSE DONNEE : 1
+REPONSE INTERPRETEE : {1, 2}
+QUESTION : positions disponibles : {9, 3, 6}, choisir la valeur
+REPONSE DONNEE : 3
+REPONSE INTERPRETEE : 3
+NOUVEAU PLACEMENT : bleu-3-clean
+****
+  Tour de l'inspecteur
+QUESTION : Tuiles disponibles : [violet-8-clean, rose-5-clean, noir-1-suspect] choisir entre 0 et 2
+REPONSE DONNEE : 0
+REPONSE INTERPRETEE : violet-8-clean
+l'inspecteur joue violet
+QUESTION : Voulez-vous activer le pouvoir (0/1) ?
+REPONSE DONNEE : 1
+REPONSE INTERPRETEE : True
+Pouvoir de violet activé
+Rappel des positions :
+Tour:3, Score:13/22, Ombre:2, Bloque:{1, 2}
+violet-8-clean  marron-3-clean  noir-1-suspect  rose-5-clean  gris-2-clean  bleu-3-clean  rouge-3-clean  blanc-1-suspect
+QUESTION : Avec quelle couleur échanger (pas violet!) ?
+REPONSE DONNEE : 0
+REPONSE INTERPRETEE : rose
+NOUVEAU PLACEMENT : violet-5-clean
+NOUVEAU PLACEMENT : rose-8-clean
+****
+  Tour de l'inspecteur
+QUESTION : Tuiles disponibles : [rose-8-clean, noir-1-suspect] choisir entre 0 et 1
+REPONSE DONNEE : 0
+REPONSE INTERPRETEE : rose-8-clean
+l'inspecteur joue rose
+QUESTION : positions disponibles : {9, 4, 5}, choisir la valeur
+REPONSE DONNEE : 2
+REPONSE INTERPRETEE : 9
+NOUVEAU PLACEMENT : rose-9-clean
+****
+  Tour de le fantome
+QUESTION : Tuiles disponibles : [noir-1-suspect] choisir entre 0 et 0
+REPONSE DONNEE : 0
+REPONSE INTERPRETEE : noir-1-suspect
+le fantome joue noir
+QUESTION : positions disponibles : {0}, choisir la valeur
+REPONSE DONNEE : 0
+REPONSE INTERPRETEE : 0
+NOUVEAU PLACEMENT : noir-0-suspect
+QUESTION : Voulez-vous activer le pouvoir (0/1) ?
+REPONSE DONNEE : 1
+REPONSE INTERPRETEE : True
+Pouvoir de noir activé
+le fantome frappe
+**************************
+Tour:4, Score:16/22, Ombre:2, Bloque:{1, 2}
+violet-5-clean  marron-3-clean  noir-0-suspect  rose-9-clean  gris-2-clean  bleu-3-clean  rouge-3-clean  blanc-1-suspect
+****
+  Tour de l'inspecteur
+QUESTION : Tuiles disponibles : [marron-3-clean, blanc-1-suspect, gris-2-clean, rouge-3-clean] choisir entre 0 et 3
+REPONSE DONNEE : 0
+REPONSE INTERPRETEE : marron-3-clean
+l'inspecteur joue marron
+QUESTION : Voulez-vous activer le pouvoir (0/1) ?
+REPONSE DONNEE : 1
+REPONSE INTERPRETEE : True
+Pouvoir de marron activé
+QUESTION : positions disponibles : {2, 7}, choisir la valeur
+REPONSE DONNEE : 2
+REPONSE INTERPRETEE : 2
+NOUVEAU PLACEMENT : marron-2-clean
+NOUVEAU PLACEMENT : bleu-2-clean
+NOUVEAU PLACEMENT : rouge-2-clean
+****
+  Tour de le fantome
+QUESTION : Tuiles disponibles : [blanc-1-suspect, gris-2-clean, rouge-2-clean] choisir entre 0 et 2
+REPONSE DONNEE : 0
+REPONSE INTERPRETEE : blanc-1-suspect
+le fantome joue blanc
+QUESTION : positions disponibles : {0}, choisir la valeur
+REPONSE DONNEE : 0
+REPONSE INTERPRETEE : 0
+NOUVEAU PLACEMENT : blanc-0-suspect
+QUESTION : Voulez-vous activer le pouvoir (0/1) ?
+REPONSE DONNEE : 1
+REPONSE INTERPRETEE : True
+Pouvoir de blanc activé
+QUESTION : noir-0-suspect, positions disponibles : {1, 4}, choisir la valeur
+REPONSE DONNEE : 1
+REPONSE INTERPRETEE : 1
+NOUVEAU PLACEMENT : noir-1-suspect
+****
+  Tour de le fantome
+QUESTION : Tuiles disponibles : [gris-2-clean, rouge-2-clean] choisir entre 0 et 1
+REPONSE DONNEE : 0
+REPONSE INTERPRETEE : gris-2-clean
+le fantome joue gris
+QUESTION : Voulez-vous activer le pouvoir (0/1) ?
+REPONSE DONNEE : 1
+REPONSE INTERPRETEE : True
+Pouvoir de gris activé
+QUESTION : Quelle salle obscurcir ? (0-9)
+REPONSE DONNEE : 2
+REPONSE INTERPRETEE : 2
+QUESTION : positions disponibles : {3}, choisir la valeur
+REPONSE DONNEE : 3
+REPONSE INTERPRETEE : 3
+NOUVEAU PLACEMENT : gris-3-clean
+****
+  Tour de l'inspecteur
+QUESTION : Tuiles disponibles : [rouge-2-clean] choisir entre 0 et 0
+REPONSE DONNEE : 0
+REPONSE INTERPRETEE : rouge-2-clean
+l'inspecteur joue rouge
+QUESTION : Voulez-vous activer le pouvoir (0/1) ?
+REPONSE DONNEE : 1
+REPONSE INTERPRETEE : True
+Pouvoir de rouge activé
+fantome a été tiré
+QUESTION : positions disponibles : {3}, choisir la valeur
+REPONSE DONNEE : 2
+REPONSE INTERPRETEE : 3
+NOUVEAU PLACEMENT : rouge-3-clean
+le fantome frappe
+**************************
+Tour:5, Score:19/22, Ombre:2, Bloque:{1, 2}
+violet-5-clean  marron-2-clean  noir-1-suspect  rose-9-clean  gris-3-clean  bleu-2-clean  rouge-3-clean  blanc-0-suspect
+****
+  Tour de le fantome
+QUESTION : Tuiles disponibles : [gris-3-clean, violet-5-clean, bleu-2-clean, noir-1-suspect] choisir entre 0 et 3
+REPONSE DONNEE : 0
+REPONSE INTERPRETEE : gris-3-clean
+le fantome joue gris
+QUESTION : Voulez-vous activer le pouvoir (0/1) ?
+REPONSE DONNEE : 1
+REPONSE INTERPRETEE : True
+Pouvoir de gris activé
+QUESTION : Quelle salle obscurcir ? (0-9)
+REPONSE DONNEE : 2
+REPONSE INTERPRETEE : 2
+QUESTION : positions disponibles : {2, 7}, choisir la valeur
+REPONSE DONNEE : 2
+REPONSE INTERPRETEE : 2
+NOUVEAU PLACEMENT : gris-2-clean
+****
+  Tour de l'inspecteur
+QUESTION : Tuiles disponibles : [violet-5-clean, bleu-2-clean, noir-1-suspect] choisir entre 0 et 2
+REPONSE DONNEE : 0
+REPONSE INTERPRETEE : violet-5-clean
+l'inspecteur joue violet
+QUESTION : Voulez-vous activer le pouvoir (0/1) ?
+REPONSE DONNEE : 1
+REPONSE INTERPRETEE : True
+Pouvoir de violet activé
+Rappel des positions :
+Tour:5, Score:19/22, Ombre:2, Bloque:{1, 2}
+violet-5-clean  marron-2-clean  noir-1-suspect  rose-9-clean  gris-2-clean  bleu-2-clean  rouge-3-clean  blanc-0-suspect
+QUESTION : Avec quelle couleur échanger (pas violet!) ?
+REPONSE DONNEE : 0
+REPONSE INTERPRETEE : rose
+NOUVEAU PLACEMENT : violet-9-clean
+NOUVEAU PLACEMENT : rose-5-clean
+****
+  Tour de l'inspecteur
+QUESTION : Tuiles disponibles : [bleu-2-clean, noir-1-suspect] choisir entre 0 et 1
+REPONSE DONNEE : 0
+REPONSE INTERPRETEE : bleu-2-clean
+l'inspecteur joue bleu
+QUESTION : Voulez-vous activer le pouvoir (0/1) ?
+REPONSE DONNEE : 1
+REPONSE INTERPRETEE : True
+Pouvoir de bleu activé
+QUESTION : Quelle salle bloquer ? (0-9)
+REPONSE DONNEE : 0
+QUESTION : Quelle sortie ? Chosir parmi : {1, 4}
+REPONSE DONNEE : 0
+REPONSE INTERPRETEE : {0, 1}
+QUESTION : positions disponibles : {1, 3}, choisir la valeur
+REPONSE DONNEE : 2
+REPONSE INTERPRETEE : 1
+NOUVEAU PLACEMENT : bleu-1-clean
+****
+  Tour de le fantome
+QUESTION : Tuiles disponibles : [noir-1-suspect] choisir entre 0 et 0
+REPONSE DONNEE : 0
+REPONSE INTERPRETEE : noir-1-suspect
+le fantome joue noir
+QUESTION : positions disponibles : {2}, choisir la valeur
+REPONSE DONNEE : 2
+REPONSE INTERPRETEE : 2
+NOUVEAU PLACEMENT : noir-2-suspect
+QUESTION : Voulez-vous activer le pouvoir (0/1) ?
+REPONSE DONNEE : 1
+REPONSE INTERPRETEE : True
+Pouvoir de noir activé
+NOUVEAU PLACEMENT : rouge-2-clean
+le fantome frappe
+Le fantôme a gagné
+Score final : 0

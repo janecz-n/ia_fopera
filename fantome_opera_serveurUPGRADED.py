@@ -154,21 +154,6 @@ class partie:
             self.joueurs[i].jouer(self)
     def lumiere(self):
         partition = [{p for p in self.personnages if p.position == i} for i in range(10)]
-        mapPos = [""] * 10
-        for p in self.personnages:
-            couleur = str(p).split('-')[0]
-            pos = int(str(p).split('-')[1])
-            if len(mapPos[pos]) > 0:
-                mapPos[pos] += ";"
-            mapPos[pos] += couleur
-        log (RED, end='')
-        zeMap = "\n***MAP***\n"
-        zeMap += "[" + mapPos[8] + "]--------[" + mapPos[9] + "]\n"
-        zeMap += "[" + mapPos[4] + "]--[" + mapPos[5] + "]--[" + mapPos[6] + "]--[" + mapPos[7] + "]\n"
-        zeMap += "[" + mapPos[0] + "]--[" + mapPos[1] + "]--[" + mapPos[2] + "]--[" + mapPos[3] + "]\n"
-        zeMap += "***ENDOFMAP***\n"
-        log (zeMap)
-        log (ENDC, end='')
         if len(partition[self.fantome.position]) == 1 or self.fantome.position == self.shadow:
             informer("le fantome frappe")
             self.start += 1
@@ -186,6 +171,20 @@ class partie:
 
     def tour(self):
         informer("**************************\n" + str(self))
+        mapPos = [""] * 10
+        for p in self.personnages:
+            couleur = str(p).split('-')[0]
+            pos = int(str(p).split('-')[1])
+            if len(mapPos[pos]) > 0:
+                mapPos[pos] += ";"
+            mapPos[pos] += couleur
+        log (RED, end='')
+        zeMap = "\n***MAP***\n"
+        zeMap += "[" + mapPos[8] + "]--------[" + mapPos[9] + "]\n"
+        zeMap += "[" + mapPos[4] + "]--[" + mapPos[5] + "]--[" + mapPos[6] + "]--[" + mapPos[7] + "]\n"
+        zeMap += "[" + mapPos[0] + "]--[" + mapPos[1] + "]--[" + mapPos[2] + "]--[" + mapPos[3] + "]\n"
+        zeMap += "***ENDOFMAP***\n\n" + ENDC
+        log (zeMap)
         self.actions()
         self.lumiere()
         for p in self.personnages:
@@ -194,6 +193,21 @@ class partie:
     def lancer(self):
         while self.start < self.end and len([p for p in self.personnages if p.suspect]) > 1:
             self.tour()
+
+        mapPos = [""] * 10
+        for p in self.personnages:
+            couleur = str(p).split('-')[0]
+            pos = int(str(p).split('-')[1])
+            if len(mapPos[pos]) > 0:
+                mapPos[pos] += ";"
+            mapPos[pos] += couleur
+        log (RED, end='')
+        zeMap = "\n***MAP***\n"
+        zeMap += "[" + mapPos[8] + "]--------[" + mapPos[9] + "]\n"
+        zeMap += "[" + mapPos[4] + "]--[" + mapPos[5] + "]--[" + mapPos[6] + "]--[" + mapPos[7] + "]\n"
+        zeMap += "[" + mapPos[0] + "]--[" + mapPos[1] + "]--[" + mapPos[2] + "]--[" + mapPos[3] + "]\n"
+        zeMap += "***ENDOFMAP***\n\n" + ENDC
+        log (zeMap)
         log ("L'enquêteur a trouvé - c'était " + str(self.fantome) if self.start < self.end else "Le fantôme a gagné")
         log ("Score final : "+str(self.end-self.start))
         informer("L'enquêteur a trouvé - c'était " + str(self.fantome) if self.start < self.end else "Le fantôme a gagné")

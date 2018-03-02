@@ -1,6 +1,7 @@
 #Fantome
 from random import randrange, choice
 import logger
+from list_card import weight_data
 
 GREEN = '\033[92m'
 YELLOW = '\033[93m'
@@ -96,6 +97,8 @@ class Manager:
         tuiles = question.split('[')[1].split(']')[0].split(',')
         personnages = []
         p = 0
+        heaviestCard_pos = 0
+        heaviestCard_weight = 0
         for t in tuiles:
             personnageInfos = t.strip().split('-')
             perso = {}
@@ -105,7 +108,10 @@ class Manager:
             perso["room"] = personnageInfos[1]
             perso["suspect"] = 1 if personnageInfos[2] == "suspect" else 0
             personnages.append(perso)
-        return str(0)
+            if weight_data[perso["color"]] > heaviestCard_weight:
+                heaviestCard_pos = perso["pos"]
+                heaviestCard_weight = weight_data[perso["color"]]
+        return str(heaviestCard_pos)
 
     def selectPosition(self, question):
         posDispo = question.split('{')[1].split('}')[0].split(',')

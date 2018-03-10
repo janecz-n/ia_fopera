@@ -1,10 +1,10 @@
 weight_data = {
     "rouge": 8, # Pioche suspect ou fantome
-    "gris": 7, # Eteint une pièce
-    "noir": 6, # Attire adjacents
-    "blanc": 5, # Repousse
-    "violet": 4, # Switch
-    "marron": 3, # Kidnap
-    "bleu": 2, # Bloque un passages
-    "rose": 1 # Passage secret
+    "rose": 7, # Passage secret
+    "gris": 6, # Eteint une pièce
+    "noir": 5, # Attire adjacents
+    "blanc": 4, # Repousse
+    "violet": 3, # Switch
+    "marron": 2, # Kidnap
+    "bleu": 1 # Bloque un passages
 }

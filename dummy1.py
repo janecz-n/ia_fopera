@@ -166,6 +166,7 @@ class Manager:
         #isFantomAlone = True if len(self.Rooms[self.Personnages[self.fantome]["room"]]) == 1 else False
         isFantomAlone = self.shouldISplit()
         self.split = isFantomAlone
+        log ("Should suspects split ? " + str(isFantomAlone))
         #Don t waste time if only one available
         if len(tuiles) == 1:
             self.selectedPersonnage = tuiles[0].strip().split('-')[0]
@@ -187,10 +188,14 @@ class Manager:
                 if room in self.Lock and str(p) in self.Lock:
                     log  ("Passage " + room + " to " + str(p) + " is locked..")
                     continue
+                #Estime l etat des salles apres les deplacements
                 sizeOfRoomAfterMove = len(self.Rooms[str(p)])
-                if str(p) in question:
+                if str(p) in question.split(']')[0]:
                     sizeOfRoomAfterMove -= 1
-                log ("ppl in room annex (" + str(p) + ") : " + str(len(self.Rooms[str(p)])) + " after move: " + str(sizeOfRoomAfterMove))
+                isOmbre = ""
+                if self.Ombre == p:
+                    isOmbre = " into the Darkness.."
+                log ("ppl in room annex (" + str(p) + ") : " + str(len(self.Rooms[str(p)])) + " after move: " + str(sizeOfRoomAfterMove) + isOmbre)
                 if isFantomAlone and (sizeOfRoomAfterMove == 0 or self.Ombre == p):
                     persoPossibility[posInQuestion] = pI[0]
                     continue
@@ -224,20 +229,20 @@ class Manager:
     def movePersonnage(self, question):
         posDispo = question.split('{')[1].split('}')[0].split(',')
         pos = 0
-        posValue = 10
+        posValue = 0
         if self.split == True:
-            posValue = 0
+            posValue = 10
         for p in posDispo:
             cleanPos = p.strip()
             if self.split is True:
                 if len(self.Rooms[cleanPos]) == 0 or int(cleanPos) == self.Ombre:
                     pos = cleanPos
                     break
-                if len(self.Rooms[cleanPos]) > posValue:
+                if len(self.Rooms[cleanPos]) < posValue:
                     posValue = len(self.Rooms[cleanPos])
                     pos = cleanPos
             elif self.split is False:
-                if len(self.Rooms[cleanPos]) > 0 and len(self.Rooms[cleanPos]) < posValue:
+                if len(self.Rooms[cleanPos]) > 0 and len(self.Rooms[cleanPos]) > posValue:
                     pos = cleanPos
                     posValue = len(self.Rooms[cleanPos])
             else:
@@ -248,7 +253,7 @@ class Manager:
         if "Tuiles disponibles :" in question:
             return str(self.selectTuile(question))
         elif "Voulez-vous activer le pouvoir" in question:
-            return str(1)
+            return str(self.shouldIUseMyPower())
         elif ", positions disponibles" in question:
             return str(self.usePositionPower(question))
         elif "positions disponibles" in question:
@@ -256,7 +261,8 @@ class Manager:
         elif "Avec quelle couleur échanger" in question:
             return str(self.useSwitchPower())
         elif "Quelle salle obscurcir ?" in question:
-            return str(self.roomBlacked())
+            self.ombre = self.roomBlacked()
+            return str(self.ombre)
         elif "Quelle salle bloquer ?" in question:
             return str(2)
         elif "Quelle sortie ?" in question:
@@ -275,6 +281,26 @@ class Manager:
             self.Rooms[pI[1]][pI[0]] = self.Personnages[pI[0]]["suspect"]
         except:
             pass
+
+    def shouldIUseMyPower(self):
+        if self.selectedPersonnage == "noir" and self.split == True:
+            return (0)
+        if self.selectedPersonnage == "noir" and self.split == False:
+            return (1)
+        if self.selectedPersonnage == "gris":
+            return (1)
+        if self.selectedPersonnage == "violet":
+            return (1)
+        if self.selectedPersonnage == "rouge":
+            return (1)
+        if self.selectedPersonnage == "blanc":
+            #Evite de perdre du temps de calcule si le blanc est tout seul
+            if len(self.Rooms[self.Personnages["blanc"]["room"]]) > 1:
+                if self.Personnages["blanc"]["suspect"] == 1 and self.split == True:
+                    return (1)
+                else:
+                    return (0)
+        return (0)
 
     def roomBlacked(self):
         #Si fantome tout seul

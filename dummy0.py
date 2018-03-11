@@ -109,27 +109,30 @@ class Manager:
         return True
 
     def selectTuile(self, question):
-        tuiles = question.split('[')[1].split(']')[0].split(',')
-        personnages = []
-        for t in tuiles:
-            personnageInfos = t.strip().split('-')
-            perso = {}
-            perso["color"] = personnageInfos[0]
-            perso["room"] = personnageInfos[1]
-            perso["suspect"] = 1 if personnageInfos[2] == "suspect" else 0
-            personnages.append(perso)
-        weight = {}
-        for p in personnages:
-            sus = p["suspect"] + 1
-            weight[p["color"]] = sus * 1 + self.power[p["color"]]
-        coul = str(max(weight, key=weight.get))
-        i = 0
-        for c in personnages:
-            if c["color"] == coul:
-                self.current = personnages[i]
-                self.pouvoir = 0
-                return str(i)
-            i += 1
+        try:
+            tuiles = question.split('[')[1].split(']')[0].split(',')
+            personnages = []
+            for t in tuiles:
+                personnageInfos = t.strip().split('-')
+                perso = {}
+                perso["color"] = personnageInfos[0]
+                perso["room"] = personnageInfos[1]
+                perso["suspect"] = 1 if personnageInfos[2] == "suspect" else 0
+                personnages.append(perso)
+            weight = {}
+            for p in personnages:
+                sus = p["suspect"] + 1
+                weight[p["color"]] = sus * 1 + self.power[p["color"]]
+            coul = str(max(weight, key=weight.get))
+            i = 0
+            for c in personnages:
+                if c["color"] == coul:
+                    self.current = personnages[i]
+                    self.pouvoir = 0
+                    return str(i)
+                i += 1
+        except:
+            pass
         return str(0)
 
     def accompagner(self, pos, alone):
@@ -296,17 +299,20 @@ class Manager:
         pos = []
         for p in posDispo:
             pos.append(int(p.strip()))
-        is_alone = self.is_alone(self.current["room"])
-        if is_alone:
-            if self.suspects_seuls - self.suspects_accompagnes > 1:
-                return self.accompagner(pos, True)
+        try:
+            is_alone = self.is_alone(self.current["room"])
+            if is_alone:
+                if self.suspects_seuls - self.suspects_accompagnes > 1:
+                    return self.accompagner(pos, True)
+                else:
+                    return self.isoler(pos, True)
             else:
-                return self.isoler(pos, True)
-        else:
-            if self.suspects_accompagnes > self.suspects_seuls:
-                return self.isoler(pos, False)
-            else:
-                return self.accompagner(pos, False)
+                if self.suspects_accompagnes > self.suspects_seuls:
+                    return self.isoler(pos, False)
+                else:
+                    return self.accompagner(pos, False)
+        except:
+            pass
         return choice(pos)
 
     def selectQuestion(self, question):

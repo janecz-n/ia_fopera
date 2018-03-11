@@ -36,7 +36,7 @@ class personnage:
     def __repr__(self):
         susp = "-suspect" if self.suspect else "-clean"
         return self.couleur + "-" + str(self.position) + susp
-            
+
 class joueur:
     def __init__(self,n):
         self.numero = n
@@ -98,17 +98,17 @@ class joueur:
                     return [q for q in party.personnages if p.position == q.position]
                 if p.couleur == "gris":
                     w = demander("Quelle salle obscurcir ? (0-9)",self)
-                    party.shadow = int(w) if w.isnumeric() and int(w) in range(10) else (0
+                    party.shadow = int(w) if w.isnumeric() and int(w) in range(10) else (0)
                     informer("REPONSE INTERPRETEE : "+str(party.shadow))
                 if p.couleur == "bleu":
                     w = demander("Quelle salle bloquer ? (0-9)",self)
                     x = int(w) if w.isnumeric() and int(w) in range(10) else 0
                     w = demander("Quelle sortie ? Chosir parmi : "+str(passages[x]),self)
                     y = int(w) if w.isnumeric() and int(w) in passages[x] else passages[x].copy().pop()
-                    informer("REPONSE INTERPRETEE : "+str({x,y}))       
+                    informer("REPONSE INTERPRETEE : "+str({x,y}))
                     party.bloque = {x,y}
         return [p]
-                    
+
     def bouger(self,p,avec,bloque):
         pass_act = pass_ext if p.couleur == 'rose' else passages
         if p.couleur != 'violet' or p.pouvoir:
@@ -139,7 +139,7 @@ class partie:
         message("!!! Le fantôme est : "+self.fantome.couleur,[self.joueurs[1]])
         self.cartes.remove(self.fantome)
         self.cartes += ['fantome']*3
-        
+
         shuffle(self.tuiles)
         shuffle(self.cartes)
         for i,p in enumerate(self.tuiles):
@@ -169,7 +169,7 @@ class partie:
                     for p in gens:
                         p.suspect = False
         self.start += len([p for p in self.personnages if p.suspect])
-            
+
     def tour(self):
         informer("**************************\n" + str(self))
         self.actions()
@@ -185,6 +185,15 @@ class partie:
     def __repr__(self):
         return "Tour:" + str(self.num_tour) + ", Score:"+str(self.start)+"/"+str(self.end) + ", Ombre:" + str(self.shadow) + ", Bloque:" + str(self.bloque) +"\n" + "  ".join([str(p) for p in self.personnages])
 
+print("Clear files..")
+for i in range(2):
+    f = open("./" + str(i) + "/infos.txt","w")
+    f.close()
+    f = open("./" + str(i) + "/questions.txt","w")
+    f.close()
+    f = open("./" + str(i) + "/reponses.txt","w")
+    f.close()
+print("Cleared")
 joueurs = [joueur(0),joueur(1)]
 Thread(target=dummy0.lancer).start()
 Thread(target=dummy1.lancer).start()

@@ -39,8 +39,8 @@ positions disponibles : {1, 3}, choisir la valeur
 """
 
 class Manager:
-    def __init__(self): 
-        self.power = {'violet':7, 'rouge':8, 'blanc':4, 'bleu':1, 'gris':6, 'rose':5, 'marron':2, 'noir':3} 
+    def __init__(self):
+        self.power = {'violet':7, 'rouge':8, 'blanc':4, 'bleu':1, 'gris':6, 'rose':5, 'marron':2, 'noir':3}
         self.suspects_per_room = {'0':0, '1':0, '2':0, '3':0, '4':0, '5':0, '6':0, '7':0, '8':0, '9':0}
         self.perso_per_room = {'0':0, '1':0, '2':0, '3':0, '4':0, '5':0, '6':0, '7':0, '8':0, '9':0}
         self.suspects_accompagnes = 0
@@ -54,7 +54,7 @@ class Manager:
         self.FDGameState = open('./0/infos.txt','r')
         self.posFDGameState = 0
         self.pouvoir = 0
-        
+
     def closeFD(self):
         self.FDGameState.close()
 
@@ -102,12 +102,12 @@ class Manager:
             elif self.perso_per_room[p] > 1 and self.suspects_per_room[p] >= 1:
                 self.suspects_accompagnes += self.suspects_per_room[p]
         log(self.Personnages)
-        
+
     def is_alone(self, room):
         if self.perso_per_room[room] > 1:
             return False
         return True
-    
+
     def selectTuile(self, question):
         tuiles = question.split('[')[1].split(']')[0].split(',')
         personnages = []
@@ -121,7 +121,7 @@ class Manager:
         weight = {}
         for p in personnages:
             sus = p["suspect"] + 1
-            weight[p["color"]] = sus * 1 + self.power[p["color"]] 
+            weight[p["color"]] = sus * 1 + self.power[p["color"]]
         coul = str(max(weight, key=weight.get))
         i = 0
         for c in personnages:
@@ -131,7 +131,7 @@ class Manager:
                 return str(i)
             i += 1
         return str(0)
-        
+
     def accompagner(self, pos, alone):
         if self.current["suspect"] == 1:
             rooms_perso = []
@@ -160,7 +160,7 @@ class Manager:
                 return p
             p = choice(pos)
             return p
-        
+
     def isoler(self, pos, alone):
         if self.current["suspect"] == 1:
             rooms_empty = []
@@ -189,7 +189,7 @@ class Manager:
                 return p
             p = choice(pos)
             return p
-                
+
     def eteindre(self):
         if self.suspects_accompagnes > self.suspects_seuls:
             rooms_suspects = []
@@ -205,7 +205,7 @@ class Manager:
                 p = choice(sec)
                 return p
         return 0
-    
+
     def find_suspect_accompagne(self):
         rooms_suspects = []
         for key, value in self.suspects_per_room.items():
@@ -222,7 +222,7 @@ class Manager:
                 if s['room'] == p and s['suspect'] == 1 and s['color'] != 'violet':
                     return s['color']
         return "rose"
-    
+
     def find_isolement(self):
         rooms_people = []
         for key, value in self.perso_per_room.items():
@@ -234,7 +234,7 @@ class Manager:
                 if s['room'] == p and s['color'] != 'violet':
                     return s['color']
         return "rose"
-    
+
     def find_accompagnement(self):
         rooms_people = []
         for key, value in self.perso_per_room.items():
@@ -246,7 +246,7 @@ class Manager:
                 if s['room'] == p and s['color'] != 'violet':
                     return s['color']
         return "rose"
-        
+
     def find_suspect_isole(self):
         rooms_suspects = []
         for key, value in self.suspects_per_room.items():
@@ -258,7 +258,7 @@ class Manager:
                 if s['room'] == p and s['suspect'] == 1 and s['color'] != 'violet':
                     return s['color']
         return "rose"
-    
+
     def change(self):
         suspect = False if self.current['suspect'] == 0 else True
         if self.perso_per_room[self.current['room']] > 1:
@@ -274,7 +274,7 @@ class Manager:
         if not alone and self.suspects_seuls > self.suspects_accompagnes and not suspect:
             return self.find_suspect_isole()
         return "rose"
-        
+
     def pouvoir_violet(self):
         suspect = False if self.current['suspect'] == 0 else True
         if self.perso_per_room[self.current['room']] > 1:
@@ -290,7 +290,7 @@ class Manager:
         if not alone and self.suspects_seuls > self.suspects_accompagnes and not suspect:
             return 1
         return 0
-    
+
     def selectPosition(self, question):
         posDispo = question.split('{')[1].split('}')[0].split(',')
         pos = []
